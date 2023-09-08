@@ -1,0 +1,10 @@
+[win]
+<target_server_ip>
+
+[win:vars]
+ansible_user=<server_username>
+ansible_password="<server_password>"
+ansible_port=5985  #listening port - http
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=credssp

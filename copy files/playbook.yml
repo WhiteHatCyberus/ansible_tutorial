@@ -1,0 +1,15 @@
+---
+- name: win_copy module demo
+  hosts: win
+  become: false
+  gather_facts: false
+  vars:
+    source:  "test_folder"
+    destination: "L:/Test/"
+  tasks:
+    - name: copy
+      ansible.windows.win_copy:
+        src: "{{ source }}"
+        dest: "{{ destination }}"
+        remote_src: yes
+        force: yes
